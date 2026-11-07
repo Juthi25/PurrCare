@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 13+: runtime permission needed to show reminder notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Lets reminders fire at the exact minute when the user allows it (Android 12+) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:name=".PurrCareApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PurrCare">
+
+        <activity android:name=".activities.SplashActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LoginActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.RegisterActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.HomeActivity" android:exported="false" />
+        <activity android:name=".activities.CatsActivity" android:exported="false" />
+        <activity android:name=".activities.AddEditCatActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.HealthActivity" android:exported="false" />
+        <activity android:name=".activities.RemindersActivity" android:exported="false" />
+        <activity android:name=".activities.MoreActivity" android:exported="false" />
+        <activity android:name=".activities.FoodActivity" android:exported="false" android:launchMode="singleTop" />
+        <activity android:name=".activities.WeightActivity" android:exported="false" />
+        <activity android:name=".activities.ExpenseActivity" android:exported="false" />
+        <activity android:name=".activities.DiaryActivity" android:exported="false" />
+        <activity android:name=".activities.EmergencyActivity" android:exported="false" />
+
+        <!-- Receives the alarm when a reminder is due and shows the notification -->
+        <receiver android:name=".notifications.ReminderReceiver" android:exported="false" />
+
+        <!-- Needed so the camera app can save the full-size photo for us -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

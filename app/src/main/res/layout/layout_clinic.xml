@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="20dp" app:cardElevation="4dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏥  Pet Clinic Website" android:textColor="@color/text_dark" android:textSize="17sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvClinicUrl" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="@color/text_gray" android:textSize="14sp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnVisitClinic" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Visit Pet Clinic Website" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnEditClinic" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Edit" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginTop="8dp" android:text="📞  Emergency Contacts" android:textColor="@color/text_dark" android:textSize="17sp" android:textStyle="bold" />
+</LinearLayout>

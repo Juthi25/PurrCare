@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="0dp" android:layout_height="0dp" android:fillViewport="true" app:layout_constraintBottom_toTopOf="@+id/bottomNav" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+            <TextView style="@style/TitleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="6dp" android:text="More 🐾" />
+            <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_gray" android:textSize="14sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginTop="14dp" android:text="Features" android:textColor="@color/text_dark" android:textSize="18sp" android:textStyle="bold" />
+            <GridLayout android:id="@+id/featureGrid" android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="2" android:layout_marginTop="4dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginTop="14dp" android:text="Settings" android:textColor="@color/text_dark" android:textSize="18sp" android:textStyle="bold" />
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="20dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchRemember" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="Remember me (stay logged in)" android:textColor="@color/text_dark" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchShake" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="Shake phone for quick feeding action" android:textColor="@color/text_dark" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnShare" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginEnd="6dp" android:layout_marginTop="10dp" android:text="Share PurrCare" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnLogout" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginEnd="6dp" android:layout_marginTop="8dp" android:text="Log out" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:padding="16dp" android:text="PurrCare v1.0 🐾 Made with love for cats" android:textColor="@color/text_gray" android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottomNav" android:layout_width="0dp" android:layout_height="wrap_content" android:background="@color/white" app:elevation="8dp" app:labelVisibilityMode="labeled" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:menu="@menu/bottom_nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>
